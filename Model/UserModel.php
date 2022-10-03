@@ -33,7 +33,7 @@ class UserModel
   }
 
 
-  public function save($id, $data)
+  public function edit($id, $data)
   {
     $this->userList[$id] = $data;
     $this->saveto();

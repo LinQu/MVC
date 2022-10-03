@@ -3,11 +3,21 @@
 
 <h1>User Form</h1>
 <form action="" method="post">
-  <label for="name">Name</label>
-  <input type="text" name="name" id="name">
-  <label for=" age">Age</label>
-  <input type="text" name="age" id="age">
-  <input type="submit" value="Save">
+  <table>
+    <tr>
+      <td><label for="name">Name</label></td>
+      <td>:</td>
+      <td><input type="text" name="name" id="name"></td>
+    </tr>
+    <tr>
+      <td><label for="age">Age</label></td>
+      <td>:</td>
+      <td><input type="text" name="age" id="age"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" value="Save"></td>
+    </tr>
+  </table>
 </form>
 
 </html>

@@ -2,6 +2,7 @@
 
 class UserController
 {
+  // ?controller=UserController/index
   public function index()
   {
     $usermodel = new UserModel();
@@ -9,10 +10,11 @@ class UserController
     require 'View\UserListView.php';
   }
 
-  public function form($id)
+  // ?controller=UserController/form
+  public function form()
   {
     $usermodel = new UserModel();
-    $userData = $usermodel->get($id);
+
 
 
     if (isset($_POST['name']) && isset($_POST['age'])) {
@@ -29,12 +31,14 @@ class UserController
     header('Location: ?controller=UserController/index');
   }
 
+
+  // ?controller=UserController/edit/$id  
   public function edit($id)
   {
     $usermodel = new UserModel();
     $userData = $usermodel->get($id);
     if (isset($_POST['name']) && isset($_POST['age'])) {
-      $usermodel->save($id, array("name" => $_POST['name'], "age" => $_POST['age']));
+      $usermodel->edit($id, array("name" => $_POST['name'], "age" => $_POST['age']));
       header('Location: ?controller=UserController/index');
     }
     require 'View\UserEditView.php';
